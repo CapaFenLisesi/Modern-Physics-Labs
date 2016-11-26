@@ -1,0 +1,236 @@
+% A sample latex code using the pendulum experiment as a foundation.
+
+%\documentclass[prb,twocolumn,groupaddress,showpacs,superbib,floats]{revtex4-1}
+\documentclass[prb,preprint,groupaddress,showpacs,superbib,floats]{revtex4-1}
+
+%Here is you comment out the "preprint" line using a % and remove the one from the "twocolumn" line, you can recompile it and see the document as it might appear in a journal.
+
+\usepackage{graphicx}
+\usepackage{times}
+%\newcommand{\units}[1]{\,\mathrm{ #1 }} % for roman font units
+
+\begin{document}
+
+% Using the %-sign, you can add documents that the latex compiler will ignore when you generate you document
+
+% Here is where you can enter your title and name. 
+
+\title{Pendulum Experiment Latex Example}
+\author{J A H Stotz}
+\affiliation{ENPH 353 - Partner: Rob Knobel}
+
+\begin{abstract}
+
+% Abstract goes here
+
+Normally, your abstract should give a brief summary of both how you got your results and what they were, thus giving the reader an overview of the experiment.  Here, a measurement of the acceleration due to gravity was performed.  The angular displacement of a physical pendulum was measured using an optical encoder and fit to a damped sinusoidal function to extract the oscillation frequency.  With this setup, the acceleration in Kingston, Ontario (latitude 44.225~N, longitude 76.498~W) was found to be $9.76 \pm 0.06$~m/s$^2$.  Corrected for centrifugal effects, the acceleration due to gravity is found to be $9.78 \pm 0.06$~m/s$^2$, in agreement with the nominal value at of 9.806~m/s$^2$. [Endnoted/cited references are not normally in the abstract]  The model would fit the data better if a large angle solution was used. The error in the mass of the pendulum was found to be the most significant source of error. [\LaTeX\ note: I used a tilde \~ between the numbers and the units.  In \LaTeX, the tilde adds a space but treats both sides as one "word" so that the values and units do not get split up and appear on different lines.]
+
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{introduction}
+
+Because of some special functions in this RevTex formatting, the first time you compile the \LaTeX \ (the "play" button in TexStudio), it may want you to install additional packages (Miktex will definitely have this).  At the top of the \LaTeX \ file, you can choose to have a two-column format or a pre-print format.  For handing in, please use the pre-print format so that I can mark the document more easily.
+
+Math symbols and equations can be made in the text by putting them between \$ ... \$.  Here are some symbols $ \alpha, \beta, \gamma $ and all $_{sub}$script (such as $e_i$) and $^{super}$script (such as $e^x$) must use the math as well.  To group more than a single character, use the curly brackets \{ \} in the \LaTeX \ code. (Note here: to get an extra space, I used a backslash (\textbackslash) after the \LaTeX \ command.)
+
+A normal carriage return won't produce a new paragraph.  You will need to put two returns (ie, have an empty line) or use the double backslash command.
+
+I have presented more of the "data analysis" depth, just to provide some structure to the document.  As for the tone and depth, please consider that you are writing this to your fellow cohort so that they could read the work and understand it.
+
+
+\section{Experimental Details}\label{experiment}
+
+This section should explain, in your own words, the experiment.  For this experiment, Fig.~\ref{schematic} shows the schematic of the setup used to measure the damped oscillations of the pendulum.  I used a PNG files for this one, but a properly cropped PDF will work as well.  Note that for the file names (and for the bibliography), \LaTeX \ is case sensitive, so you should be aware of the little details.
+
+
+%********************************************************************
+% Figure: Schematic / Free Body Diagram of the Pendulum
+%
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm, clip=true]{schematic.png}
+\caption{Schematic of the pendulum setup.  From Ref.~\onlinecite{Corben94}. [Note the online citation in \LaTeX]}
+\label{schematic}
+\end{figure}
+%********************************************************************
+
+In \LaTeX, you can also put in nice tables.  The measured (or referenced) values used for the experiment are listed in Table~\ref{expvalues}.  Moment of inertia was calculated using Halliday and Resnick.\cite{Halliday13}
+
+%********************************************************************
+% Table: Table of values for the pendulum.
+%
+
+\begin{table}[h]
+\begin{ruledtabular}
+\begin{tabular}{cccc}
+	
+\textbf{Component} & \textbf{Value} & \textbf{Error} & \textbf{Units} \\ 
+\hline
+Cylinder Mass & 1.1400  & 0.0001 & kg \\ 
+Cylinder Length & $7.11 \times 10^{-2}$ & $1 \times 10^{-5}$ & m \\ 
+Cylinder Diameter & $7.11 \times 10^{-2}$ & $1 \times 10^{-5}$ & m \\ 
+		&  &  &  \\ 
+Rod Mass & $7.05 \times 10^{-2}$  & $2 \times 10^{-5}$ & kg \\ 
+Rod Length & $9.46 \times 10^{-3}$ & $2 \times 10^{-5}$ & m \\ 
+Rod Diameter & $3.60 \times 10^{-4}$ & $1 \times 10^{-5}$ & m \\ 
+		&  &  &  \\ 
+Pivot Mass & $2.06 \times 10^{-2}$  & $1.1 \times 10^{-4}$ & kg \\ 
+Pivot Length & $3.79 \times 10^{-2}$ & $1 \times 10^{-4}$ & m \\ 
+Pivot Diameter & $4.92 \times 10^{-3}$ & $1 \times 10^{-5}$ & m \\ 
+Pivot 2 Length & $2.85 \times 10^{-2}$ & $1 \times 10^{-4}$ & m \\ 
+Pivot 2 Diameter & $8.79 \times 10^{-3}$ & $2 \times 10^{-5}$ & m \\ 
+		&  &  &  \\ 
+Top of Cylinder to axis & $6.22 \times 10^{-1}$ & $2.54 \times 10^{-4}$ & m \\ 
+Rod Mass & $8.40 \times 10^3$  & $1 \times 10^2$ & kg/m$^3$ \\ 
+
+\end{tabular}
+\end{ruledtabular}
+\caption{Table of experimental conditions.  Note that in the \LaTeX, you put as many c's after the tabular command to indicate the number of columns.  "c" stands for centering.  Each element is a row is separated with an \& and the double backslash indicates the end of the row.  In TeXstudio, there is a tabular wizard that will initialize some basic \LaTeX \ table layout. }
+\label{expvalues}
+\end{table}
+
+%***************************************************************
+
+\subsection*{Experimental Considerations}
+
+Maybe you want to separate some items with a heading and a subsection, but not necessarily want to have a Subsection~\ref{experiment}.1 without a Subsection~\ref{experiment}.2.  Looking at the \LaTeX \ here, you can use a "*" after the subsection command to avoid any numbering.  This is similar done f you want to include un-numbered equations.
+
+Here, we want to mention that initially, the rod flexed under motion, which was not ideal.  Instead, the aluminum rod was replaced with a stiff, light stainless steel tube.  Our setup had strong damping, and the oscillations damped out after $\approx 15$ (see latex here) oscillations.  The pivot was then replaced with a ball-bearing assembly.  
+
+\section{Background}
+
+Here you can call the section the Background or Theory, but it will essentially have the important physics and be largely populated with equations.
+
+The system that was used will be modelled as a damped pendulum, which is described by the equation
+
+\begin{equation}\label{motion}
+I \ddot{\theta} = - mgl \sin \theta + r_s \mu ( m g \cos \theta + m l \dot{\theta}^2 )\frac{\dot{\theta}}{|\dot{\theta}|}
+\end{equation}
+
+\noindent where $\theta$ is the angular position, $g$ is .... and so on.
+
+Note that in the math/equation environment, case sensitivity is also key.  For example, it provides a difference between omega ($\omega$) and Omega ($\Omega$).
+
+This experiment will only be considering small angles and small velocities.  The approximate solution to Eqn.~\ref{motion} is then
+
+\begin{equation}\label{fitfunc}
+\theta = A \cos (\omega t + \phi) e^{-\frac{t}{\tau}} + C
+\end{equation}
+
+\noindent where the parameter of interest $\omega$ is given by 
+
+\begin{equation}
+\omega = \sqrt{\frac{mgl}{I_{cm}}}
+\end{equation}
+
+Our data will be fit using the function in Eqn.~\ref{fitfunc} and varying the parameters $A$, $\omega$, $\phi$, $\tau$, and $C$. [\LaTeX\ note:  Here, I didn't use the noindent command and we have a new paragraph, but if the equation occurs in the middle of a sentence or thought, you can use the noindent command to remove the look of a new paragraph.]
+
+
+\section{Results and Discussion}\label{results}
+
+\subsection{Results}
+
+You can have some freedom here to do what seems best to make a \textit{story} that flows nicely. For some, it is some raw data and then fitting, for others with different parts of the experiment, it would involve separating out those experiments.  This might be a good place to use the subsection commands.
+
+
+
+%********************************************************************
+% Figure: Raw data for the Pendulum
+%
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=6cm, clip=true]{rawdata.png}
+	\caption{Complete set (upper) and the first 10 seconds (lower) of the raw data taken from the encoder.  Angular uncertainty: $\pm$0.5 units (4000 units per revolution)}
+	\label{rawdata}
+\end{figure}
+%********************************************************************
+
+%********************************************************************
+% Figure: fitted data for the Pendulum
+%
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=6cm, clip=true]{fitteddata.png}
+	\caption{Processed and Fitted oscillations for the entire data set (upper) and for the first 2s (lower).}
+	\label{fitteddata}
+\end{figure}
+%********************************************************************
+
+%********************************************************************
+% Figure: Residual data for the Pendulum
+%
+\begin{figure}[th]
+	\centering
+	\includegraphics[width=6cm, clip=true]{residuals.png}
+	\caption{Scaled residuals for the fitted data.}
+	\label{residuals}
+\end{figure}
+%********************************************************************
+
+
+The raw data is shown in Fig.~\ref{rawdata}, and the fitted data is in Fig.~\ref{fitteddata}.  The fitting was performed with a scaled Levenberg-Marquardt algorithm, and a table of the fit parameters is given in Table~\ref{fitvalues}.
+
+NOTE:  After the figure command, I put a "t" instead the "h" above in Fig.~\ref{schematic}.  The difference is "h" will put the figure right after the preceeding text, while "t" puts the figure about where it should be, but at the top of the page (or similarly, no text above the figure).  Sometimes this looks nicer than a couple lines of text and then a figure. "b" for bottom of the page works similarly if you would like.
+
+
+%********************************************************************
+% Table: Table of fit parameters.
+%
+
+\begin{table}[t]
+	\begin{ruledtabular}
+		\begin{tabular}{ccc}
+			
+			\textbf{Parameter} & \textbf{Value} & \textbf{Error $(\pm)$} \\ 
+			\hline
+			A & 0.1319485  & $1.433 \times 10^{-5}$ \\ 
+			$\omega$ & 3.8727499 & $1.97 \times 10^{-6}$ \\ 
+			$\phi$ & 5.0985358 & 0.0001091 \\ 
+			$\tau$ & 580.1431  & 0.6611 \\ 
+			C & 4.6084523 & $4.867 \times 10^{-6}$  \\ 
+			$\chi^2$/dof & 2.03198 & \\ 
+			R$^2$ & -274.532 &  \\ 
+			
+		\end{tabular}
+	\end{ruledtabular}
+	\caption{Table of fit parameters}
+	\label{fitvalues}
+\end{table}
+
+%***************************************************************
+
+The value for $\omega = 3.8727499 \pm 0.00000020 s^{-1}$ seems reasonable.  However, the poor $\chi^2$ and R$^2$ values indicate a poor fit, even though the errors seem small.  Looking at the scaled residuals from the fit, as plotted by the (data-fit)/uncertainty, in Fig.~\ref{residuals} shows that the exponentially decaying sinusoid is not a good function to use as the residuals are not randomly distributed points. Using the measurements of the system, the calculated for “$g$” is $g = 9.763 \pm 0.056 m/s^2$.  To determine the effect of the poor fit on the final result, a sensitivity analysis is performed by examining the contributions to the result by varying each parameter by 1\% and combining it with that parameter's uncertainty. The sensitivity analysis shows that the primary source of error in the result is from the measurement of the mass of the pendulum. (I didn't put in this table, but you should)
+
+\subsection{Corrections}
+
+A correction to the value can be made by taking into account the centrifugal acceleration on the pendulum as the earth rotates. Using the fact that Kingston is at latitude $\lambda = 44.225^\circ N$, the centrifugal acceleration can be given by
+
+\begin{equation}
+\Omega^2 R \sin \lambda = 2.42 cm/s^2
+\end{equation}
+
+The final value attained is $g = 9.76 + 0.02 = 9.78 \pm 0.06 m/s^2$, which is comparable to the nominally accepted value of $9.80665$~m/s$^2$.\cite{Taylor08}
+
+
+
+\section{Summary and Conclusions}
+
+Here, you can summarize what was done and provide some outlook to future work.  Please be wary of too much future work, as maybe it could be considered to be things your should have done in this report.
+
+In the future, the axes should be larger and more readable.
+
+\section{Statement of Contributions}
+
+The original experiment was devised by Prof.~Aksel Hallin, and Rob Knobel modified the original experiment, presentation, and analysis.  This report was prepared by myself.\cite{Stotz15} (You should do your own analysis for your report!)  A special thank you to Gary Contant for fabricating the pendulum and to Dirk Bouma for the computer and electronics assemblies.
+
+I also added below the \texttt{Pendulum.bib} file to show how to easily do references.  This \texttt{.bib} file can be modified easily using JabRef, and adding the file name as in the \LaTeX \ file will have the references added appropriately and auto-numbered.
+
+\bibliography{Pendulum}
+
+%\begin{thebibliography}
+%\end{thebibliography}
+
+\end{document}
+
