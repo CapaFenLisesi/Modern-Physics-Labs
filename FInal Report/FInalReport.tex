@@ -1,0 +1,325 @@
+% A sample latex code using the pendulum experiment as a foundation.
+
+%\documentclass[prb,twocolumn,groupaddress,showpacs,superbib,floats]{revtex4-1}
+\documentclass[prb,preprint,groupaddress,showpacs,superbib,floats]{revtex4-1}
+
+%Here is you comment out the "preprint" line using a % and remove the one from the "twocolumn" line, you can recompile it and see the document as it might appear in a journal.
+
+\usepackage{graphicx}
+\usepackage{times}
+%\newcommand{\units}[1]{\,\mathrm{ #1 }} % for roman font units
+
+\begin{document}
+
+% Using the %-sign, you can add documents that the latex compiler will ignore when you generate you document
+
+% Here is where you can enter your title and name. 
+
+\title{Compton Effect Final Lab}
+\author{Colin MacLeod}
+\affiliation{ENPH 353 - Lab Partner: Alex Stothart}
+
+\begin{abstract}
+
+% Abstract goes here
+An experiment was conducted to test the Compton Effect. The Compton Effect describes the energy loss of a photon after interacting with a free charged particle. In this experiment the reaction between an electron and photon was used. When a photon interacts with a free electron energy is transfered from the photon to the electron, resulting in both being inelestically scattered. This is known as Compton Scattering. The Compton Effect states that the energy loss of the photon is dependant on the scattering angle. This experiment was designed to determine the energies of the photon after an interaction at set angles. A radioactive source of $^{137}$Cs was placed inline with as NaI scintillator. Another scintillator was placed at a set angle to measure the nergy of the photons after the interaction. The experiment was conducted three times at angles of 60$^{\circ}$, 90$^{\circ}$, and 120$^{\circ}$. A Gaussian fit was performed on a histogram of the energies at a set angle to determine the mean and standard deviation. The mean energy was used to calculate the theoretical angle. At each angle the theoretical and measured angles were within error. A second calculation was performed to dtermine check consistency. The energies of the photon and electron were added together to test if summed they were equal to the incident energy. The summed experimental energies were within error of the expected incident enrgry for each angle tested.
+
+
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{introduction}
+
+Compton Scattering was discovered by Arthur Holly Compton, winning him a Nobel Prize in 1927. Compton scattering is the result of a photon interacting with a free charged particle. When the photon interacts with the charged particle both scatter, similar to an inelastic collision. The scattering is caused by the transfer of enery from the photon to the electron. The Compton Effect explains the difference in wavelength resulting from the energy transfer. This discovery suggests that light cannot be treated as simply a wave but also a particle. The Compton Effect states that the energy difference of the photon before and after interaction is related to the scattering angle. The difference in wavelength of the photon is known as the Compton Shift. 
+
+\section{Experimental Details}\label{experiment}
+\subsection{Apparatus}
+The apparatus consisted of two NaI scintillators each connected to a photomultiplier tube. A photon coming from a $^{137}$Cs source was scattered by an electron in the first scintillator (scintillator A), and the resulting photon is absorbed in the second scintillator (scintillator B). Scintillator A absorbs the electron and is used to records the electron’s energy, while scintillator B absorbs the photon, and is used to records the photons energy. When a Compton scattering interaction occurs, the electron and the photon will be absorbed by the scintillators almost simultaneously. The experimental setup is shown in Figure~\ref{diagram}.
+
+
+%********************************************************************
+% Figure: Schematic 
+%
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm, clip=true]{diagram.png}
+\caption{Schematic of the compton scattering apparatus}
+\label{diagram}
+\end{figure}
+%********************************************************************
+
+The photomultiplier tubes output pulses of amplitudes corresponding to the energy of the particle absorbed in the scintillator, and these pulses are collected by the analysis electronics. The pulses are sorted into histograms based on their amplitudes. 
+Because the experiment is conducted in an open room, there will be an abundance of background photons entering the scintillators. To ensure that only particles entering the scintillators resulting from Compton scattering are analysed, only pulses resulting from events occurring simultaneously in scintillator A and B are recorded. These events will not occur at the same time exactly, but will be separated by a short enough interval of time to be considered simultaneous. 
+
+\subsection{Setup}
+Experimental setup involved two main tasks. The first of these tasks involved appropriately adjusting the time delay allowable for two events to be considered simultaneous. The second involved adjusting the amplification of the pulses resulting from particle absorption in the scintillators to allow for suitable energy measurement. Since both of these tasks are time consuming, they were carried out by the lab supervisors prior the beginning of the lab period. 
+
+
+\subsection{Energy Calibration}
+In order to effectively measure energy of various scattered photons and electrons, the histogram channels (also referred to as “bins”) used to sort the pulse amplitudes needed to be calibrated to energy values in keV. This was done by placing sources that emit photons of known energies directly between scintillators A and B, and recording the resulting pulse peak amplitudes in the histogram channels. The sources used are summarized in Table~\ref{calTable}. 
+
+%********************************************************************
+% Table: Table of values for the pendulum.
+%
+
+\begin{table}[h]
+\begin{ruledtabular}
+\begin{tabular}{cccc}
+	
+\textbf{Source} & \textbf{Energy of Emitted Photons [keV]} \\ 
+\hline
+$^{137}$Cs & 662 \\ 
+$^{133}$Ba & 81 \\ 
+$^{22}$Na & 511 \\ 
+
+\end{tabular}
+\end{ruledtabular}
+\caption{Energy of photons emitted from various sources. }
+\label{calTable}
+\end{table}
+
+%***************************************************************
+This allowed a relationship to be determined for both scintillators between the histogram channel the pulses fall in, and the (known) energy of the photons causing the pulses. 
+
+\subsection{Data Collection}
+Using the $^{137}$Cs source, the apparatus was positioned so that scintillator A would absorb scattered photons, scintillator B would absorb the scattered electrons, and the photon scattering angle would be 60°. Data was recorded for a period of slightly over 20 seconds in a histogram. The apparatus was adjusted, and data collection was repeated with a scattering angle of 90$^{\circ}$, followed by 120$^{\circ}$. 
+
+
+\section{Background}
+The Compton effect examines the change in energy of a photon after it has interacted with a charged particle. The most common example of this, and the example used in this experiment, is the interaction between a photon and am electron. When a photon interacts with an electron both the electron and photon will be inelastically scattered, this effect is called Compton Scattering. A diagram of the scattering of an electron and photon is shown in Fig.~\ref{scatter}. 
+%********************************************************************
+% Figure: fitted data for the Pendulum
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm, clip=true]{scatter.png}
+	\caption{Diagram of Compton Scattering.}
+	\label{scatter}
+\end{figure}
+%********************************************************************
+The scattering of the electron is caused by he transfer of kinetic energy from the photon to the electron. As a result of the loss of energy, the wavelength of the photon decreases. If the proton still has enough energy this process may be repeated more than once. 
+Eq~\ref{eq7} describes the relationship between the energy of the scattered photon to the angle at which the photon scatters, and the energy of the original incident photon.
+\begin{equation}\label{eq7}
+E'_\gamma= E_\gamma(1+\frac{E_\gamma}{(m_e c^2 )} (1-cos \theta))^{-1}
+\end{equation}
+This equation can be derived as follows:
+Begin by stating that momentum is conserved through the collision:
+
+\begin{equation}\label{eq1}
+P_\gamma= P'_\gamma+P_e
+\end{equation}
+
+Where P\textsubscript{$\gamma$}  represents the momentum of the incident photon, P'\textsubscript{$\gamma$} represents the momentum of 
+the scattered photon,and P\textsubscript{e}  represents the momentum of the recoiled electron.   
+
+This can be rewritten as Eq.~\ref{eq2}
+
+\begin{equation}\label{eq2}
+p_e^2=p_\gamma^2+p_\gamma^{'2} - 2 p_\gamma p'_\gamma cos\theta
+\end{equation}
+
+From conservation of energy:
+\begin{equation}\label{eq3}
+p_\gamma c+ m_e c^2= p'_\gamma c+((m_e c^2 )^2+p_e^2 c^2 )^0.5
+\end{equation}
+This can be rewritten as Eq~\ref{eq4} 
+\begin{equation}\label{eq4}
+p_e^2= p_\gamma^{2} + p_\gamma^{2} - 2p_\gamma p'_\gamma + 2m_e c (p_\gamma-p'_\gamma )
+\end{equation}
+Equating Eq.~\ref{eq2} and Eq.~\ref{eq4} rearanging gives Eq.~\ref{eq5}
+\begin{equation}\label{eq5}
+m_e c(p_\gamma-p'_\gamma )= p_\gamma p'_\gamma (1-cos\theta)
+\end{equation}
+Inserting $\lambda$=h/p,where $\lambda$ is the wavelength,and rearranging gives
+\begin{equation}\label{eq6}
+\lambda'_\gamma- \lambda_\gamma=\frac{h}{mc}*(1-cos\theta)
+\end{equation}
+This is known as the Compton Equation.Inserting $\lambda$=hc/E and rearranging gives Eq.~\ref{eq7}
+
+\[E'_\gamma= E_\gamma(1+\frac{E_\gamma}{(m_e c^2 )} (1-cos \theta))^{-1}\]
+
+In this experiment data was collected in histograms. To determine the true value and uncertainty the data was fit to the Gaussian equation. The Gaussian equation is shown in Eq.~\ref{gauss}
+\begin{equation}\label{gauss}
+f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{1}{2} (\frac{x-\mu}\sigma{})^2}
+\end{equation}
+where $\mu$ is the mean and $\sigma$ is the standard deviation.
+
+\section{Results}\label{results}
+
+\subsection{Energy Calibration}
+
+The pulse amplitudes were recorded in histograms for each source; a primary peak was observed as well as two distinct background levels occurring before and after the central peak respectively. The histogram recorded by scintillator B for the $^{137}$Cs source is shown in Fig.~\ref{histB}. 
+%********************************************************************
+% Figure: fitted data for the Pendulum
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm, clip=true]{calB.png}
+	\caption{Histogram recording the number of counts that fall within each bin. This data is used, along with the known energy of the source to convert bin numbers to energy levels.}
+	\label{histB}
+\end{figure}
+
+The histograms for the other two sources displayed similar trends. The histograms recorded by scintillator A displayed similar trends, but the data was not nearly as clean as the data recorded by scintillator B, leading to greater uncertainties.
+The background levels before an after the main peak were subtracted from the data, leaving only a normal distribution around a central histogram channel. This allowed a Gaussian distribution to be fit to the data, giving a mean value for the peak channel, and a standard deviation for the distribution, representing the uncertainty of the data. The process was repeated for the data recorded using the other two sources. The results are summarized in Table~\ref{conv}. 
+
+\begin{table}[h]
+	\begin{ruledtabular}
+		\begin{tabular}{ccccc}
+			
+			\textbf{Source} & \textbf{Scintillatot A-Mean} & \textbf{Scintillator A-STD} & \textbf{Scintillator B-Mean} & \textbf{Scintillator B-STD} \\ 
+			\hline
+			$^{137}$Cs & 590 & 30 &610 & 20 \\ 
+			$^{133}$Ba & 82 & 6 & 76 & 4 \\ 
+			$^{22}$Na & 470 & 20 & 470 & 20 \\ 
+			
+		\end{tabular}
+	\end{ruledtabular}
+	\caption{Summary of the distribution of the counts falling in each bin for various photon sources.}
+	\label{conv}
+\end{table}
+
+
+The known energies of the photons emitted by the three sources were plotted against the histogram channels of the data recorded using each source.A linear relation was fit to the plotted data, giving a conversion factor between histogram channel and photon energy. This relation is superimposed on the plot in Fig.~\ref{Acal} and Fig.~\ref{Bcal}. 
+
+%********************************************************************
+% Figure: fitted data for the Pendulum
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm, clip=true]{Acal.png}
+	\caption{Plot of the mean energies of each source for scintillator A and the linear regression used to determine the conversion fron bins to energy.}
+	\label{Acal}
+\end{figure}
+%********************************************************************
+%********************************************************t************
+% Figure: fitted data for the Penulum
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=15cm, clip=true]{Bcal.png}
+	\caption{Plot of the mean energies of each source for scintillator B and the linear regression used to determine the conversion fron bins to energy.}
+	\label{Bcal}
+\end{figure}
+%********************************************************************
+
+
+\subsection{Data Collection}
+
+The histogram representing the data collected by scintillator B for a scattering angle of 90° is shown in Fig.~\ref{B90}. Note that the histogram channels have been converted to energy values using the conversion factors determined by th elinear regressions performed on the known sources. A Gaussian equation (Eq.~\ref{gauss}) was fit to the data with the mean being taken as the true value and the standard deviation being taken as the error. 
+%********************************************************t************
+% Figure: fitted data for the Penulum
+%
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=17cm, clip=true]{B90.png}
+	\caption{Histogram Recording the Counts Falling in Each Energy Bin for Scintillator B in the Trial Using a Scattering Angle of 90°. A Gaussian distribution was fit to the data to obtain a mean value and a 				standard deviation. The Gaussian fit is superimposed over the plotted data. .}
+	\label{B90}
+\end{figure}
+%********************************************************************
+
+The histograms representing the data collected by both scintillators, and for all observed scattering angles display a similar trend. Once again, a Gaussian distribution could be fit to the datasets to determine mean values and standard deviations, representing the energy of the scattered particles and the uncertainty on the energy respectively. The Gaussian fit is superimposed on the data in Figure 6. The results of the Gaussian fitting on all collected data is summarized in Table~\ref{scattered energies}. 
+
+%********************************************************************
+% Table: Table of fit parameters.
+%
+
+\begin{table}[h]
+	\begin{ruledtabular}
+		\begin{tabular}{ccccc}
+			
+			\textbf{Angle [$^{\circ}$]} & \textbf{Photon Energy [keV]} & \textbf{Error $(\pm)$ keV}  & \textbf{Electron Energy [keV]} & \textbf{Error $(\pm)$ keV} \\ 
+			\hline
+			60 & 410  & 40 & 230 & 50 \\ 
+			90 & 280 & 30 & 340 & 40 \\ 
+			120 & 260 & 70 & 450 & 70 \\ 
+			
+		\end{tabular}
+	\end{ruledtabular}
+	\caption{Summary of the measured photon scattering energies and the recoil energy of the Electron. }
+	\label{scattered energies}
+\end{table}
+
+%***************************************************************
+
+\section{Discussion}
+The scattering angle could be calculated using the experimentally determined scattering photon energies and Equation 1. A sample calculation determining the scattering angle of a scattered photon with an energy of 410 ± 40 KeV is shown below. 
+
+\[E'_\gamma= E_\gamma*(1+\frac{E_\gamma}{(m_e c^2 )} (1-cos \theta))^{-1}\]
+\[\theta=cos^{-1}⁡(1-(\frac{1}{E'_\gamma} -\frac{1}{E_\gamma} )m_e c^2 )\]
+\[\theta=cos^{-1}⁡(1-(\frac{1}{410 \pm40}-\frac{1}{662})510.998)\]
+\[\theta=58 \pm7\]
+
+
+The scattering angles for the other experimentally determined energies were calculated in the same fashion. The results are displayed in Table~\ref{realvexp}. 
+%********************************************************************
+% Table: Table of fit parameters.
+%
+
+\begin{table}[h]
+	\begin{ruledtabular}
+		\begin{tabular}{ccc}
+			
+			\textbf{Energy [keV]} & \textbf{Calculated Angle [$^{\circ}$]} & \textbf{Actual Angle [$^{\circ}$]} \\ 
+			\hline
+			410 $(\pm)$ 40 & 58 $(\pm)$ 7  & 60  \\ 
+			280 $(\pm)$ 30 & 93 $(\pm)$ 10 & 90  \\ 
+			260 $(\pm)$ 70 & 100 $(\pm)$ 50 & 120 \\ 
+			
+		\end{tabular}
+	\end{ruledtabular}
+	\caption{Comparison of the actual scattering angles, and the scattering angles calculated using the measured energies of the scattered photons. }
+	\label{realvexp}
+\end{table}
+
+%***************************************************************
+
+In all cases, the calculated angles match the actual values within uncertainty. The high uncertainty in the angle calculated for the 260 $\pm$ 70 keV photon energy results from the high relative uncertainty in the photon energy itself. This is a product of a wide, messy normal distribution of the histogram channels when data was collected at this angle. 
+The energy of the recoil electron and of the scattered photon were summed to see if they result in the correct energy of the initial incident photon. The initial incident photon (emitted from a $^{137}$Cs source) should possess an energy of 662 keV. The results of the summed energies are shown in Table~\ref{added}. The uncertainties were propagated through addition in quadrature.
+ %********************************************************************
+% Table: Table of fit parameters.
+%
+
+\begin{table}[h]
+	\begin{ruledtabular}
+		\begin{tabular}{cccc}
+			
+			\textbf{Scattering Angle [$^{\circ}$]} & \textbf{Photon Energy [keV]} & \textbf{Electron Energy [keV]} & \textbf{Incident Energy [keV]}  \\ 
+			\hline
+			60 & 410 $(\pm)$ 40 &  230 $(\pm)$ 50 & 640 $(\pm)$ 60   \\ 
+			90 & 280 $(\pm)$ 30 & 340 $(\pm)$ 40  & 620 $(\pm)$ 50   \\ 
+			120 & 260 $(\pm)$ 70  & 450 $(\pm)$ 70  & 710 $(\pm)$ 100  \\ 
+			
+		\end{tabular}
+	\end{ruledtabular}
+	\caption{ Summation of the energies of the scattered photon and the recoiled electron.}
+	\label{added}
+\end{table}
+
+%***************************************************************
+
+\subsection*{Sources of uncertainty}
+Uncertainty in the angle resulted from the protractor used being much smaller than the distnace to the scintillator and the path lined with lead being very wide and tall. 
+
+\section{Summary and Conclusions}
+
+An experiment was conducted to test the known equation for the Compton Effect. The Compteon Effect descirbes hte energy loss of a photon after it interacts with an electron as a function of the scattering angle. The experiement used a $^{137}$Cs source dircted at a NaI scintillator (scintillator A) which recorded the energy of an electron after an interaction with a photon. The source was srounded by a lead protective wall on all side except the on facing the scintillator. Blocks of lead were placed on either side of the path between the souce and the scintillator. A second scintillator (scintillator B) was placed at a set angle to record the energies of the photons after interacting with an electron. The energies were only recorded a scattered photon and electron at the same time. A historgram of the photon energies was collected and a gaussian was fit to the data to determine the mean photon energy at the specified angle. The experiment was repeated for angles of 60$^{\circ}$, 90$^{\circ}$, amd 120$^{\circ}$. 
+
+Using Eq.~\ref{eq7} the theoretical energies were calculated fo reach of hte angles tested. When compared, the theoretical values were within error of the meaured values, supporting the accepted calculation for the Compton Effect.
+
+In future experiments, a more accurate system for emasuring the angle should be used aswell as a smaller lead lined channel.
+
+
+\section{Statement of Contributions}
+
+The experiment and Lab instruction were created by James Stotz. The report was prepared by Colin MacLeod. A special thank you to J. Stotz and the TAs for for preparing the electronics and equipement and assembling the necessary resources.
+
+
+
+\bibliography{Pendulum}
+
+%\begin{thebibliography}
+%\end{thebibliography}
+
+\end{document}
+
